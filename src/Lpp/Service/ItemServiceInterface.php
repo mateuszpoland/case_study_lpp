@@ -1,6 +1,7 @@
 <?php
+declare(strict_types=1);
 
-namespace Lpp\Service;
+namespace Lpp\Lpp\Service;
 
 /**
  * Represents the connection to a specific item store.

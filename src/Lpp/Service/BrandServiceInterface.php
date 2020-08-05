@@ -1,6 +1,7 @@
 <?php
+declare(strict_types=1);
 
-namespace Lpp\Service;
+namespace Lpp\Lpp\Service;
 
 /**
  * The implementation is responsible for resolving the id of the collection from the

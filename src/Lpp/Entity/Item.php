@@ -1,5 +1,7 @@
 <?php
-namespace Lpp\Entity;
+namespace Lpp\Lpp\Entity;
+
+use Lpp\Lpp\Entity\ValueObject\ItemUrl;
 
 /**
  * Represents a single item from a search result.
@@ -17,7 +19,7 @@ class Item
     /**
      * Url of the item's page
      * 
-     * @var string
+     * @var ItemUrl
      */
     public $url;
 

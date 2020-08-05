@@ -1,5 +1,5 @@
 <?php
-namespace Lpp\Entity;
+namespace Lpp\Lpp\Entity;
 
 /**
  * Represents a single brand in the result.

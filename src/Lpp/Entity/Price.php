@@ -1,6 +1,6 @@
 <?php
 
-namespace Lpp\Entity;
+namespace Lpp\Lpp\Entity;
 
 /**
  * Represents a single price from a search result
