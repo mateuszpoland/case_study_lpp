@@ -33,7 +33,6 @@ class BrandServiceTest extends TestCase
             for ($j = 0; $j < 5; $j++) {
                 $price = new Price();
                 $price->description = 'price description' . $j;
-                // prices will be sorted descendingly - 800, 750, 700, 650, 600
                 $price->priceInEuro = 800 - ($j * 50);
                 $item->prices[] = $price;
             }
