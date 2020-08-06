@@ -1,3 +1,40 @@
+#in order to set up the project:
+
+cd <some directory>
+git clone https://github.com/mateuszpoland/case_study_lpp.git
+cd case_study_lpp
+composer install
+
+php -S localhost:8080
+
+Visit your browser and go into : localhost:8080 url
+You should see 'Zadanie rekrutacyjne LPP'. If so, everything is working properly.
+If not, first check log in your terminal, if 8080 port is not taken. In that case, use another one.
+
+# to check the result of a first and second task(ItemService implementation + url validation), visit:
+localhost:8080/getResult/1315475
+
+# for the third task(BrandService implementation and Items sorting), please visit:
+
+localhost:8080/getItems/winter
+
+Most controller-wise logic is placed in Kernel.php, where HTTP routing is defined.
+
+SUMMARY:
+
+"Second responsibility is to sort the returning result from the item service in whatever way. 
+Please write in the case study's summary if you find this approach correct or not. In both cases explain why."
+
+I implemented ItemPriceSortedBrandService as a Strategy pattern. I think that sorting on the backend may not be necessary, but it is a valid solution.
+Other way is to return always the same array and sort it on the front end (javascript) in high powered UI libraries like React, but it depends on 
+certain situations - if this is a SPA and client is doing a lot of async fetches, it may be helpful to do some of the logic on the backend.
+
+
+# to fire up unit tests:
+
+vendor/bin/phpunit test/
+----------------------------------------------------------------------------------
+
 # Info
 
 You need at least:
@@ -46,3 +83,4 @@ You might want to write a second implementation for the BrandServiceInterface, b
 If you need one, you can think of a "PriceOrderedBrandService" or an "ItemNameOrderedBrandService", which sort their results after receiving it from the item service.
 
 Good luck!
+
