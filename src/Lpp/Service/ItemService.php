@@ -35,6 +35,7 @@ class ItemService implements ItemServiceInterface
                         ->getCollectionData(CollectionService::COLLECTION_SIGNATURE_BRANDS);
         if(!empty($brandsData)){
             return array_map(function($brandNode) {
+                //var_dump($brandNode);
                 $brand = new Brand();
                 $brand->brand = $brandNode['name'];
                 $brand->description = $brandNode['description'];
@@ -50,7 +51,7 @@ class ItemService implements ItemServiceInterface
         return array_map(function($itemElem){
             $item = new Item();
             $item->name = $itemElem['name'];
-            $item->url = (new ItemUrl($itemElem['url'], $itemElem['name']))->__toString();
+            $item->url = (new ItemUrl($itemElem['url']))->__toString();
             $item->prices = $this->processPrices($itemElem['prices']);
             return $item;
         },$items);

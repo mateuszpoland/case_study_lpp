@@ -49,4 +49,9 @@ abstract class BrandService implements BrandServiceInterface
     public function setItemService(ItemServiceInterface $itemService) {
         $this->itemService = $itemService;
     }
+    
+    public function setCollectionNameToIdMapping(array $mapping): void
+    {
+        $this->collectionNameToIdMapping = $mapping;
+    }
 }

@@ -19,9 +19,14 @@ class ItemPriceSortedBrandService extends BrandService
      */
     public function getItemsForCollection($collectionName): array
     {
-        $unsorted = parent::getItemsForCollection($collectionName);
+        return $this->sortResult(
+            parent::getItemsForCollection($collectionName)
+        );
+    }
 
-        $sorted = usort($unsorted, function($prevIndex, $nextIndex){
+    private function sortResult(array $arrayToSort): array
+    {
+        usort($arrayToSort, function($prevIndex, $nextIndex) {
             $key1 = array_keys($prevIndex)[0];
             $key2 = array_keys($nextIndex)[0];
             $lowestPrev = [];
@@ -32,9 +37,9 @@ class ItemPriceSortedBrandService extends BrandService
             foreach($nextIndex[$key2]->prices as $price) {
                 $lowestNext[] = $price->priceInEuro;
             } 
+    
             return min($lowestPrev) <=> min($lowestNext);
         });
-
-        return $unsorted;
+        return $arrayToSort;
     }
 }

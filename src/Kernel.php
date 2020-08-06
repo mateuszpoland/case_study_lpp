@@ -44,7 +44,6 @@ class Kernel extends BaseKernel
             '<html>
                 <body>
                     <h2>Zadanie rekrutacyjne LPP</h2>
-                    <br/>
                 </body>
             </html>'
         );

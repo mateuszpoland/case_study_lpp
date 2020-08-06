@@ -8,9 +8,9 @@ class ItemUrl implements ValueObjectInterface
     /** @var string */
     private $url;
 
-    public function __construct(string $url, string $itemName)
+    public function __construct(string $url)
     {
-        $this->url = $this->validateUrl($url, $itemName);
+        $this->url = $this->validateUrl($url);
     }
 
     public function __toString(): string
@@ -18,7 +18,7 @@ class ItemUrl implements ValueObjectInterface
         return $this->url ?? 'INVALID URL';
     }
 
-    private function validateUrl(string $url, string $itemName): ?string
+    private function validateUrl(string $url): ?string
     {
         return (preg_match(
             '/^((https?|ftp)\:\/\/)?'.

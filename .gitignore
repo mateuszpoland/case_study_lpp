@@ -1,3 +1,4 @@
 data/
 vendor/
 var/
+.phpunit.result.cache
