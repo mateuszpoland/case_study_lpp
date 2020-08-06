@@ -31,6 +31,9 @@ class CollectionService
         $this->deconstructCollectionData();
     }
 
+    /**
+    * @return mixed
+    */
     public function getCollectionData(?string $key)
     {
         if($key) {
@@ -42,7 +45,7 @@ class CollectionService
         return $this->collectionRawData;
     }
 
-    private function deconstructCollectionData()
+    private function deconstructCollectionData(): void
     {
         $fileArray = json_decode($this->openFile(), true);
         foreach (self::COLLECTION_SIGNATURES as $signature) {
